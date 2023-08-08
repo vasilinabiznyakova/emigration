@@ -27,7 +27,10 @@ const Header = () => {
         />
       </Link>
 
-      <NavBar menuOpen={menuOpen} />
+      <NavBar
+        menuOpen={menuOpen}
+        handleClick={handleClick}
+      />
 
       <button
         className="xl:hidden"
