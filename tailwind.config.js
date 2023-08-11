@@ -8,14 +8,15 @@ module.exports = {
   theme: {
     screens: {
       sm: '480px',
-      // => @media (min-width: 576px) { ... }
-
       md: '768px',
-
       lg: '1000px',
-      // => @media (min-width: 1440px) { ... }
       xl: '1440px',
     },
+    // extend: {
+    //   boxShadow: {
+    //     "custom": '0px 4px 4px rgba(0, 0, 0, 0.25)'
+    //   }
+    // },
   },
   plugins: [],
 };

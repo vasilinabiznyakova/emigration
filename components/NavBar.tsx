@@ -1,52 +1,18 @@
-import NavBarItem from './NavBarItem';
-
 import { AiOutlineClose } from 'react-icons/ai';
 
-const navItems: any[] = [
-  {
-    href: '/',
-    name: 'Home',
-  },
-  {
-    href: '/about',
-    name: 'About us',
-  },
-  {
-    href: '/services',
-    name: 'Services',
-  },
-  {
-    href: '/investments',
-    name: 'Invest in cyprus',
-  },
-  {
-    href: 'migration',
-    name: 'Migration',
-  },
-  {
-    href: '/contact',
-    name: 'Contact us',
-  },
-];
+import NavList from './NavBarList';
 
 interface NavBarProps {
   menuOpen: boolean;
-  handleClick: React.MouseEventHandler<HTMLDivElement>;
+  handleClick: React.MouseEventHandler<any>;
 }
 
 const NavBar = ({ menuOpen, handleClick }: NavBarProps) => {
+
   return (
     <nav>
       <div className="hidden xl:block">
-        <ul className="flex className=' [&>*:not(:last-child)]:mr-[28px] '">
-          {navItems.map(({ href, name }) => (
-            <NavBarItem
-              key={name}
-              href={href}
-              name={name}
-            />
-          ))}
-        </ul>
+        <NavList />
       </div>
       <div
         className={
@@ -64,16 +30,7 @@ const NavBar = ({ menuOpen, handleClick }: NavBarProps) => {
           </div>
         </div>
         <div className="flex-col py-4">
-          <ul className="className=' [&>*:not(:last-child)]:mb-[18px] '">
-            {navItems.map(({ href, name }) => (
-              <NavBarItem
-                key={name}
-                href={href}
-                name={name}
-                handleClick={handleClick}
-              />
-            ))}
-          </ul>
+          <NavList handleClick={handleClick} />
         </div>
       </div>
     </nav>
